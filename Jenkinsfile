@@ -9,6 +9,14 @@ pipeline {
         USER = 'kashi'
     }
     stages {
+        stage('env configure') {
+            environment {
+                AUTH = credentials('ssh-auth')
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
         stage('Build') {
             steps {
                 sh '''
