@@ -24,6 +24,9 @@ pipeline {
                 sh 'printenv'
             }
         }
+        // stage('Parameters conf') {
+
+        // }
         stage('Build') {
             steps {
                 sh '''
