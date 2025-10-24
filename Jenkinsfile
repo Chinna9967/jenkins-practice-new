@@ -4,7 +4,9 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
         ansiColor('xterm')
     }
-
+    triggers{
+        cron (*/2 * * * *)
+    }
     environment {
         USER = 'kashi'
     }
