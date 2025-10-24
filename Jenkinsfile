@@ -4,9 +4,9 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
         ansiColor('xterm')
     }
-    triggers {
-        cron '*/2 * * * *'
-    }
+    // triggers {
+    //     cron '*/2 * * * *'
+    // }
     environment {
         USER = 'kashi'
     }
@@ -40,18 +40,18 @@ pipeline {
             }
         }
         stage('test') {
-            input {
-                message "should we continue"
-                ok "yes, we can"
-                submitter "${USER}"
-            }
             steps {
                 echo "Testing"
             }
         }
         stage('input section') {
+            input {
+                message "should we continue"
+                ok "yes, we can"
+                submitter "kashi"
+            }
             steps {
-
+                echo "Hello , ${USER}"
             }
         }
         stage('Deploy') {
