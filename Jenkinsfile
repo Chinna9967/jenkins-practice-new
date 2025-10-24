@@ -56,7 +56,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                branch 'origin/master'
+                environment name: 'USER', value: 'kashi'
             }
             steps {
                 sh '''
