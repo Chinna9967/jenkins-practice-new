@@ -5,7 +5,7 @@ pipeline {
         ansiColor('xterm')
     }
     triggers {
-        cron (*/2 * * * *)
+        cron '*/2 * * * *'
     }
     environment {
         USER = 'kashi'
