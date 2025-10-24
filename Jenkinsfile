@@ -24,9 +24,11 @@ pipeline {
                 sh 'printenv'
             }
         }
-        // stage('Parameters conf') {
-
-        // }
+        stage('Parameters conf') {
+            steps {
+                echo " hello ${params.PERSON}"
+            }
+        }
         stage('Build') {
             steps {
                 sh '''
