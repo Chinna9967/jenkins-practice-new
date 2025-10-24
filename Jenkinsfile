@@ -1,9 +1,20 @@
 pipeline {
-    agent any
+    agent { node { label 'AGENT-1' } }
+    options {
+        timeout(time: 1, unit: 'HOURS')
+        ansiColor('xterm')
+    }
+
+    environment {
+        USER = 'kashi'
+    }
     stages {
         stage('Build') {
             steps {
+                sh '''
+                printenv
                 echo "Building"
+                '''
             }
         }
         stage('test') {
