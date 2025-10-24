@@ -40,8 +40,18 @@ pipeline {
             }
         }
         stage('test') {
+            input {
+                message "should we continue"
+                ok "yes, we can"
+                submitter "${USER}"
+            }
             steps {
                 echo "Testing"
+            }
+        }
+        stage('input section') {
+            steps {
+
             }
         }
         stage('Deploy') {
