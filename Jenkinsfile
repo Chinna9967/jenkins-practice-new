@@ -4,7 +4,7 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
         ansiColor('xterm')
     }
-    triggers{
+    triggers {
         cron (*/2 * * * *)
     }
     environment {
