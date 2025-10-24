@@ -49,5 +49,6 @@ pipeline {
         }
         failure {
             echo "run job fail"
+        }
     }
 }
